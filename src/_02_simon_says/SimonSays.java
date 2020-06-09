@@ -27,7 +27,7 @@ public class SimonSays extends KeyAdapter {
 	private int tries = 0;
 	private boolean simonSays;
 	Date timeAtStart;
-
+	int logic = 0;
 	// Complete steps 1 - 7 before you test
 	// 1. Declare a JFrame variable
 	JFrame jf = new JFrame();
@@ -43,24 +43,46 @@ public class SimonSays extends KeyAdapter {
 		// key when
 		// 'Simon says' otherwise press a different key"
 		JOptionPane.showMessageDialog(null,
-				"Press the matching key when ssimon says so. You should know how to do this, becuase you are using a computer, also if you don't know what simon says is, then you have no ife, and are obviously an alien, becuase you don't know the childhood game.");
+				"Press the matching key when simon says so. \n You should know how to do this, becuase you are using a computer, \n also if you don't know what simon says is, then you have no ife, \n and are obviously an alien, becuase you don't know the childhood game.");
 		// 4. Call the showImage method to show an image
 		showImage();
 	}
 
 	public void keyPressed(KeyEvent e) {
 		// 15. Make a points variable to track the score.
-int logic = 0;
+
 		// 16. If the keyCode matches the imageIndex and "Simon says"
 if (e.getKeyCode()==imageIndex&&simonSays) {
 	logic = logic +1;
+	speak("GOOD");
+	speak("YOUR SCORE IS "+logic);
 }
+
 		// 17. Increase the value of score
 
 		// 18. Use the speak method to tell the user they were correct
 
 		// 19. If the keyCode doesn't match the imageIndex and "Simon didn't
 		// say..."
+else if (e.getKeyCode()!=imageIndex &&!simonSays) {
+
+	logic=logic+1;
+	speak("GOOD");
+	speak("YOUR SCORE IS "+logic);
+}
+else {
+	logic=logic-1;
+	speak("YOU'RE AN IDIOT");
+	speak("YOUR SCORE IS "+logic);
+	
+	tries=tries+1;
+}
+if (tries==3) {
+	speak("Your score is "+logic);
+	jf.dispose();
+	System.exit(0);
+}
+
 
 		// 20. Increase the value of score
 
@@ -77,6 +99,9 @@ if (e.getKeyCode()==imageIndex&&simonSays) {
 		// 23. Dispose of the frame
 
 		// 24. Call the showImage method to show a new image
+showImage();
+
+System.out.println(logic);
 	}
 
 	private void showImage() {

@@ -44,14 +44,13 @@ public class Jeopardy implements ActionListener {
 
 
 	public void run() {
-		JFrame frame = new JFrame();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JFrame f = new JFrame();
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		quizPanel = new JPanel();
-		frame.setLayout(new BorderLayout());
+		f.setLayout(new BorderLayout());
 
 		// 1. Make the frame show up
-
-		// 2. Give your frame a title
+	// 2. Give your frame a title
 
 		// 3. Create a JPanel variable to hold the header using the createHeader method
 
