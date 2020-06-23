@@ -68,12 +68,16 @@ qp.add(firstButton);
 
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
+thirdButton = createButton("1000");
 secondButton = createButton("100,000,000,000");
+
 		// 10. Add the secondButton to the quizPanel
 	qp.add(secondButton);
+	qp.add(thirdButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
 secondButton.addActionListener(this);
 firstButton.addActionListener(this);
+thirdButton.addActionListener(this);
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
@@ -116,15 +120,20 @@ if (buttonPressed==firstButton) {
 			// Call the askQuestion() method
  askQuestion("2+2","2", 10);
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
-
+ firstButton.setText(null);
 }// If the buttonPressed was the secondButton
 if (buttonPressed== secondButton) {
 	askQuestion("YOU CAN'T USE A CALCULATOR FOR THIS QUESTION: \n 7 × 7 ÷ 2 + π - 3^5 + 0.7 ÷ 8 × 67% + 1 × 57 × π^52", "4.0519888e+27",1000000000);
-
+secondButton.setText(null);
 }
 			// Call the askQuestion() method with a harder question
 
 		// Clear the text on the button that was pressed (set the button text to nothing)
+
+if (buttonPressed== thirdButton) {
+	askQuestion("What is the 118th element on the periodic table of elements? YOU CAN'T USE GOOGLE OR A BOOK OR A SEARCH ENGINE.", "Oganesson",1000);
+thirdButton.setText(null);
+}
 
 	}
 
@@ -142,6 +151,7 @@ if (boi .equals(correctAnswer)) {
 	score =score + prizeMoney;
 	JOptionPane.showMessageDialog(null, "You were correct, good for you!");
 	updateScore();
+	
 }
 else {
 	score= score- prizeMoney;
