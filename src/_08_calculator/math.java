@@ -12,9 +12,9 @@ import javax.swing.JTextField;
 
 public class math implements ActionListener {
 
-	int q ;
-	int w ;
-	 int e ;
+	double q ;
+	double w ;
+	 double e ;
 	
  JTextField hoi = new JTextField(20);
  JTextField hi = new JTextField(20);
@@ -58,19 +58,19 @@ jp.add(jl);
 	
 }
 		
-public void add(int q, int w) {
+public void add(double q, double w) {
 	
 	 e = (q + w);
 }	
-public void sub(int q, int w) {
+public void sub(double q, double w) {
 	
 	 e = (q - w);
 }	
-public void div(int q, int w) {
+public void div(double q, double w) {
 	
 	 e = (q / w);
 }	
-public void mul(int q, int w) {
+public void mul(double q, double w) {
 	
 	 e = (q * w);
 }
@@ -79,27 +79,27 @@ public void mul(int q, int w) {
 public void actionPerformed(ActionEvent m) {
 	// TODO Auto-generated method stub
 	if (m.getSource()== jb1) {
-	q = Integer.parseInt(hi.getText());
-	w = Integer.parseInt(hoi.getText());
+	q = Double.parseDouble(hi.getText());
+	w = Double.parseDouble(hoi.getText());
 	add(q, w);
 	}
 	
 	if (m.getSource()== jb2) {
-		q = Integer.parseInt(hi.getText());
-		w = Integer.parseInt(hoi.getText());
+		q = Double.parseDouble(hi.getText());
+		w = Double.parseDouble(hoi.getText());
 		sub(q, w);
 		}
 	if (m.getSource()== jb3) {
-		q = Integer.parseInt(hi.getText());
-		w = Integer.parseInt(hoi.getText());
+		q = Double.parseDouble(hi.getText());
+		w = Double.parseDouble(hoi.getText());
 		div(q, w);
 		}
 	if (m.getSource()== jb4) {
-		q = Integer.parseInt(hi.getText());
-		w = Integer.parseInt(hoi.getText());
+		q = Double.parseDouble(hi.getText());
+		w = Double.parseDouble(hoi.getText());
 		mul(q, w);
 		}
-	jl.setText(""+ m); 
+	jl.setText(""+ e); 
 	jf.pack();
 }	
 
